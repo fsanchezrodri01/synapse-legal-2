@@ -1,0 +1,117 @@
+.brand-main-item {
+
+    .brand-area {
+        @include flex;
+        gap: 20px;
+        justify-content: center;
+
+        @include breakpoint(max-xl) {
+            flex-wrap: wrap;
+        }
+    }
+
+    .content {
+        text-align: center;
+        margin-top: 30px;
+        margin-bottom: 20px;
+
+        p {
+            font-size: 40px;
+            font-family: $body-font;
+            letter-spacing: -0.8px;
+            color: $header-color;
+            line-height: 120%;
+
+            @include breakpoint(max-xxl) {
+                font-size: 33px;
+            }
+
+            @include breakpoint(max-xl) {
+                font-size: 34px;
+            }
+
+            @include breakpoint(max-lg) {
+                font-size: 30px;
+            }
+
+            @include breakpoint(max-md) {
+                font-size: 26px;
+            }
+
+            @include breakpoint(max-sm) {
+                font-size: 22px;
+            }
+        }
+    }
+
+    span {
+        font-size: 18px;
+        text-align: center;
+        display: inline-block;
+    }
+
+    .sign-image {
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.award-main-wrapper {
+    margin-top: 60px;
+
+    .award-wrapper {
+        padding: 40px;
+        background-color: $bg-color;
+        @include flex;
+        justify-content: space-between;
+
+        @include breakpoint(max-lg) {
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 30px;
+        }
+
+       &:not(:last-child) {
+        margin-bottom: 30px;
+       }
+    
+        .award-item {
+            @include flex;
+            gap: 60px;
+
+            @include breakpoint(max-lg) {
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+
+            .content {
+                max-width: 378px;
+                width: 100%;
+
+                h3 {
+                    @include breakpoint(max-xl){
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    
+        .year-item {
+            @include flex;
+            gap: 40px;
+
+            .year-image {
+                border-right: 1px solid red;
+                padding-right: 40px;
+            }
+
+            .cont {
+                h3 {
+                    @include breakpoint(max-xl){
+                        font-size: 25px;
+                    }
+                }
+            }
+        }
+    }
+}

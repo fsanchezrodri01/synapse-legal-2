@@ -1,0 +1,210 @@
+.footer-widget-wrapper {
+    padding: 70px 0 100px;
+
+    @include breakpoint (max-xl){
+        padding: 40px 0 60px;
+    }
+
+    @include breakpoint (max-lg){
+        padding: 30px 0 50px;
+    }
+
+    .single-footer-widget {
+        margin-top: 30px;
+        position: relative;
+
+        .widget-head {
+            margin-bottom: 20px;
+    
+            h4 {
+                color: $white;
+            }
+        }
+
+        .footer-content {
+            p {
+                color: $white;
+            }
+
+            .social-icon {
+                margin-top: 40px;
+                @include flex;
+                gap: 10px;
+    
+                a {
+                    width: 32px;
+                    height: 32px;
+                    line-height: 32px;
+                    display: inline-block;
+                    text-align: center;
+                    color: $white;
+                    border: 1px solid $white;
+                    border-radius: 100px;
+    
+                    &:hover {
+                        background-color: $theme-color;
+                        border: 1px solid $theme-color;
+                    }
+                }
+            }
+        }
+
+        .contact-info {
+
+            h6 {
+                color: $bg-color;
+                line-height: 162%;
+
+                &:not(:last-child) {
+                    margin-bottom: 30px;
+                }
+
+                a {
+                    color: $bg-color;
+                }
+            }
+        }
+
+        .list-items {
+
+            li {
+                @include transition;
+                font-weight: 600;
+                font-size: 16px;
+
+                a {
+                    color: $bg-color;
+                }
+
+                &:not(:last-child){
+                    margin-bottom: 13px;
+                }
+
+                &:hover {
+                    margin-left: 5px;
+
+                    a {
+                        color: $theme-color;
+                    }
+                }
+            }
+       }
+
+       .search-widget-wrap {
+
+        .search-widget {
+            position: relative;
+            margin-top: 30px;
+            max-width: 307px;
+            width: 100%;
+    
+            input {
+                width: 100%;
+                border: none;
+                background-color: $white;
+                position: relative;
+                font-size: 18px;
+                font-weight: 400;
+                padding: 18px 20px;
+                color: $text-color;
+                border-radius: 0;
+                text-transform: capitalize;
+    
+                &::placeholder {
+                    color: $text-color;
+                }
+            }
+    
+            button {
+                position: absolute;
+                right: 6px;
+                top: 7px;
+                bottom: 7px;
+    
+                &.theme-btn {
+                    padding: 10px 20px;
+
+                    i {
+                        transform: rotate(0deg);
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+       }
+    }
+}
+
+.footer-bottom {
+    padding: 30px 0;
+    border-top: 1px solid rgba(249, 247, 243, 0.20);
+    position: relative;
+
+    .footer-wrapper {
+        @include flex;
+        justify-content: space-between;
+
+        @include breakpoint(max-xl) {
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        @include breakpoint(max-md) {
+            justify-content: center;
+            text-align: center;
+        }
+
+        p {
+            color: $bg-color;
+        }
+    
+        .bottom-list {
+            @include flex;
+            gap: 15px;
+            position: relative;
+
+            @include breakpoint(max-xl) {
+                flex-wrap: wrap;
+            }
+
+            @include breakpoint(max-md) {
+                justify-content: center;
+            }
+    
+            li {
+                
+                a {
+                    color: $bg-color;
+                }
+            }
+        }
+    }
+}
+
+.footer-section {
+    position: relative;
+
+    &::before {
+        @include before;
+        background: rgba(24, 24, 24, 0.95);
+    }
+}
+
+.footer-section-2 {
+    position: relative;
+
+    .right-shape {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+
+        &::before {
+            @include before;
+            background: linear-gradient(0deg, rgba(24, 24, 24, 0.90) 0%, rgba(24, 24, 24, 0.90) 100%);
+        }
+
+        img  {
+            @include imgw;
+        }
+    }
+}

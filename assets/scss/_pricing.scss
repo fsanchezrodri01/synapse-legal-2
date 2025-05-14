@@ -1,0 +1,78 @@
+.pricing-card-items {
+    padding: 40px 30px;
+    background-color: $white;
+
+    @include breakpoint(max-sm) {
+        padding: 40px 20px;
+    }
+
+    .pricing-price {
+        margin-top: 30px;
+
+        h2 {
+
+            span {
+                font-size: 16px;
+                font-weight: 400;
+                color: $text-color;
+            }
+        }
+    }
+
+    .pricing-button {
+        margin-top: 20px;
+
+        .theme-btn {
+            width: 100%;
+            text-align: center;
+        }
+
+        &.style-2 {
+            
+            .theme-btn {
+                background-color: $header-color;
+
+                &::before {
+                    background-color: $theme-color;
+                }
+
+                &::after {
+                    background-color: $theme-color;
+                }
+            }
+        }
+    }
+
+    .pricing-list {
+        margin-top: 30px;
+
+        li {
+            font-size: 18px;
+            color: #282943;
+
+            @include breakpoint(max-sm) {
+                font-size: 16px;
+            }
+
+            &:not(:last-child) {
+                margin-bottom: 15px;
+            }
+
+            i {
+                width: 24px;
+                height: 24px;
+                line-height: 24px;
+                border-radius: 50px;
+                text-align: center;
+                background-color: $theme-color;
+                color: $white;
+                margin-right: 10px;
+                font-size: 12px;
+
+                @include breakpoint(max-sm) {
+                    margin-right: 5px;
+                }
+            }
+        }
+    }
+}

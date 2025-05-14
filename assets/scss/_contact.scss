@@ -1,0 +1,397 @@
+.contact-info-area {
+    @include flex;
+    justify-content: space-between;
+    padding: 120px 0;
+    border-bottom: 1px solid rgba(249, 247, 243, 0.20);
+    position: relative;
+
+    @include breakpoint(max-xl){
+		padding: 100px 0;
+        flex-wrap: wrap;
+        gap: 30px;
+	}
+
+	@include breakpoint(max-lg){
+		padding: 80px 0;
+	}
+
+    .content {
+        position: relative;
+
+        p {
+            color: $white;
+        }
+    }
+
+    .search-widget {
+        position: relative;
+        max-width: 495px;
+        width: 100%;
+
+        input {
+            width: 100%;
+            border: none;
+            background-color: $white;
+            position: relative;
+            font-size: 18px;
+            font-weight: 400;
+            padding: 16px 18px;
+            color: $text-color;
+            border-radius: 0;
+            text-transform: capitalize;
+
+            @include breakpoint(max-sm) {
+                font-size: 16px;
+            }
+
+            &::placeholder {
+                color: $text-color;
+            }
+        }
+
+        button {
+            position: absolute;
+            right: 4px;
+            top: 4px;
+            bottom: 4px;
+
+            &.theme-btn {
+                padding: 16px 24px;
+
+                @include breakpoint(max-sm) {
+                    padding: 16px 20px;
+                }
+            }
+        }
+    }
+}
+
+.appointment-wrapper {
+
+    .appointment-content {
+
+        .appointment-area {
+            margin-top: 40px;
+
+            .appointment-item {
+                @include flex;
+                gap: 20px;
+                margin-bottom: 40px;
+
+                @include breakpoint(max-xl) {
+                    flex-wrap: wrap;
+                }
+
+                .icon {
+                    width: 84px;
+                    height: 84px;
+                    line-height: 84px;
+                    text-align: center;
+                    border-radius: 50px;
+                    background-color: $theme-color;
+                    color: $white;
+                    font-size: 44px;
+                }
+
+                .content {
+                    h4 {
+                        margin-bottom: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    .contact-content {
+        background-color: $theme-color;
+        padding: 40px;
+
+        span {
+            color: $white;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        h3 {
+            margin-bottom: 10px;
+            color: $white;
+        }
+
+        .contact-form-items {
+            margin-top: 40px;
+
+            .form-clt {
+                position: relative;
+    
+                input,textarea {
+                    width: 100%;
+                    border: none;
+                    outline: none;
+                    background: $white;
+                    color: #666;
+                    padding: 16px 20px;
+                    font-weight: 400;
+                    font-size: 18px;
+        
+                    @include breakpoint (max-md){
+                        padding: 14px 20px;
+                    }
+        
+                    @include breakpoint (max-sm){
+                        padding: 12px 18px;
+                    }
+        
+                    &::placeholder {
+                        color: #666;
+                    }
+                }
+        
+                textarea {
+                    padding-bottom: 140px;
+                    resize: none;
+                }
+            }
+
+            button {
+
+                &.theme-btn {
+                    background-color: $white;
+                    color: $header-color;
+
+                    &::before {
+                        background-color: $header-color;
+                    }
+    
+                    &::after {
+                        background-color: $header-color;
+                    }
+
+                    &:hover {
+                        color: $white;
+                 
+                         &::before,&::after {
+                             width: 100%;
+                         }
+                 
+                         i {
+                             transform: rotate(0);
+                             color: $white;
+                         }
+                     }
+                }
+            }
+        }
+    }
+}
+
+.contact-info-wrapper {
+    @include flex;
+    justify-content: space-between;
+    padding: 120px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.20);
+    position: relative;
+
+    @include breakpoint(max-xl){
+		padding: 100px 0;
+        flex-wrap: wrap;
+        gap: 40px;
+	}
+
+	@include breakpoint(max-lg){
+		padding: 80px 0;
+	}
+
+    .contact-item {
+        @include flex;
+        gap: 24px;
+        border-right: 1px solid  rgba(255, 255, 255, 0.30);
+        padding-right: 100px;
+        position: relative;
+
+        @include breakpoint(max-xxl) {
+            border-right:  none;
+            padding-right: 0;
+            flex-wrap: wrap;
+        }
+
+        @include breakpoint(max-sm) {
+            gap: 47px;
+        }
+
+        .icon {
+            width: 75px;
+            height: 75px;
+            line-height: 75px;
+            text-align: center;
+            border-radius: 50px;
+            background-color: rgba(255, 255, 255, 0.10);
+            color: $white;
+            @include transition;
+
+            &:hover {
+                background-color: $theme-color;
+            }
+        }
+
+        .content {
+
+            h5 {
+                color: $white;
+                margin-bottom: 5px;
+            }
+
+            h6 {
+                color: $white;
+                font-size: 16px;
+                line-height: 162%;
+
+                a {
+                    color: $white;
+                }
+            }
+        }
+
+        &.style-2 {
+            border: none;
+            margin-right: 0;
+        }
+    }
+}
+
+.contact-circle-wrapper {
+    padding: 120px 0;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+
+    @include breakpoint(max-xl){
+		padding: 100px 0;
+	}
+
+	@include breakpoint(max-lg){
+		padding: 80px 0;
+	}
+
+    .contact-circle-area {
+        text-align: center;
+    
+        .content {
+            margin-bottom: 30px;
+    
+            h2 {
+                color: $white;
+                font-size: 90px;
+
+                @include breakpoint(max-xxl) {
+                    font-size: 80px;
+                }
+    
+                @include breakpoint(max-xl) {
+                    font-size: 70px;
+                }
+    
+                @include breakpoint(max-lg) {
+                    font-size: 60px;
+                }
+    
+                @include breakpoint(max-md) {
+                    font-size: 50px;
+                }
+    
+                @include breakpoint(max-sm) {
+                    font-size: 40px;
+                }
+            }
+        }
+
+        .circle-border {
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            background-color: $theme-color;
+            border-radius: 100px;
+            text-align: center;
+            margin:  0 auto;
+            display: inline-block;
+            font-size: 24px;
+            color: $white;
+
+            @include breakpoint (max-xl) {
+                font-size: 20px;
+            }
+
+            @include breakpoint(max-lg) {
+                width: 180px;
+                height: 180px;
+            }
+
+            @include breakpoint(max-md) {
+                width: 140px;
+                height: 140px;
+            }
+            
+            h4 {
+                color: $white;
+                line-height: 200px;
+
+                @include breakpoint(max-md) {
+                    line-height: 180px;
+                }
+
+                @include breakpoint(max-md) {
+                    line-height: 140px;
+                }
+            }
+        }
+    }
+}
+
+.contact-form-items {
+    margin-top: 60px;
+
+    @include breakpoint (max-md){
+        margin-top: 0;
+    }
+
+    .form-clt {
+        input,textarea {
+            width: 100%;
+            outline: none;
+            border: none;
+            background-color: $white;
+            padding-bottom: 20px;
+            padding: 16px 20px;
+            @include transition;
+            color: $text-color;
+            font-size: 16px;
+
+            &::placeholder {
+                color: $text-color;
+            }
+        }
+
+        textarea {
+            padding-bottom: 150px;
+            resize: none;
+        }
+    }
+
+    .contact-btn {
+        margin-top: 20px;
+        text-align: center;
+        
+    }
+}
+
+.map-items {
+    .googpemap {
+        iframe {
+            width: 100%;
+            height: 800px;
+
+            @include breakpoint (max-sm){
+                height: 400px;
+            }
+        }
+    }
+}

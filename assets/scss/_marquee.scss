@@ -1,0 +1,86 @@
+.scrolling-wrap {
+	overflow: hidden;
+	white-space: nowrap;
+	display: flex;
+	gap: 20px;
+    padding: 15px 0;
+
+	.comm {
+		display: flex;
+		align-items: center;
+		animation: scroll 60s linear infinite;
+		gap: 20px;
+		cursor: pointer;
+
+		.cmn-textslide {
+			font-size: 16px;
+			font-weight: 500;
+			line-height: 32px;
+			text-transform: capitalize;
+            color: $white;
+            font-family: $heading-font;
+            @include flex;
+            gap: 20px;
+
+            i {
+                font-size: 21px;
+            }
+
+            &.text-color-2 {
+                color: $header-color;
+            }
+		}
+	}
+
+	&:hover {
+		.comm {
+			animation-play-state: paused;
+		}
+	}
+
+	@include breakpoint (max-xxl) {
+		.comm {
+			gap: 20px;
+		}
+	}
+
+	@include breakpoint (max-lg) {
+		gap: 14px;
+		.comm {
+			gap: 14px;
+		}
+	}
+
+	@include breakpoint (max-sm) {
+		.comm {
+			gap: 12px;
+		}
+	}
+}
+
+@keyframes scroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-100%);
+	}
+}
+
+@keyframes scrolly {
+	0% {
+		transform: translateY(0);
+	}
+	100% {
+		transform: translateY(-60%);
+	}
+}
+
+@keyframes scrolls {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
