@@ -1,4 +1,9 @@
 <?php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
     /*
     name
     email
@@ -11,27 +16,49 @@
         $name = str_replace(array("\r","\n"),array(" "," "),$name);
         $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
         $message = trim($_POST["message"]);
+        $apellido = strip_tags(trim($_POST["apellido"]));
+        $apellido = str_replace(array("\r","\n"),array(" "," "),$apellido);
 
-        
+        $mail = new PHPMailer(true);
 
-        // Set the recipient email address.
-        // FIXME: Update this to your desired email address.
-        $recipient = "example@example.com";
+        try {
+            // SMTP configuration
+            $mail->isSMTP();
+            $mail->Host = 'mail.synapse-legal.com.mx';
+            $mail->SMTPAuth = true;
+            $mail->Username = 'contacto@synapse-legal.com.mx';
+            $mail->Password = 'dddddd';
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
+            $mail->Port = 465;
 
-        // Build the email content.
-        $email_content = "Name $name\n";
-        $email_content .= "Email \n$message\n";
-        $email_content .= "Message \n$message\n";
+            // Internal team email
+            $mail->setFrom('contacto@synapse-legal.com.mx', 'Synapse Legal Website');
+            $mail->addAddress('contacto@synapse-legal.com.mx');
+            $mail->addAddress('marredondo@synapse-legal.com.mx');
+            $mail->addAddress('ebocanegra@synapse-legal.com.mx');
+            $mail->addAddress('evazquez@synapse-legal.com.mx');
 
-        // Build the email headers.
-        $email_headers = "From: $name <$email>";
+            $mail->Subject = 'Nueva consulta desde el formulario de contacto';
+            $mail->Body = "Detalles de la consulta:\n\nNombre: $name\nApellido: $apellido\nCorreo Electrónico: $email\nTeléfono: $phone\nComentarios: $message";
+            $mail->send();
 
-        // Send the email.
-        if (mail($recipient,  $email_content, $email_headers)) {
+            // Prospect email
+            if (!empty($email)) {
+                $mail->clearAddresses();
+                $mail->addAddress($email);
+                $mail->addBCC('marredondo@synapse-legal.com.mx');
+                $mail->addBCC('ebocanegra@synapse-legal.com.mx');
+                $mail->addBCC('evazquez@synapse-legal.com.mx');
+
+                $mail->Subject = 'Gracias por contactar a Synapse Legal';
+                $mail->Body = "Estimado/a $name,\n\nGracias por contactarnos. Hemos recibido su mensaje y nos pondremos en contacto con usted pronto.\n\nSaludos cordiales,\nEquipo Synapse Legal";
+                $mail->send();
+            }
+
             // Set a 200 (okay) response code.
             http_response_code(200);
             echo "Thank You! Your message has been sent.";
-        } else {
+        } catch (Exception $e) {
             // Set a 500 (internal server error) response code.
             http_response_code(500);
             echo "Oops! Something went wrong ande we couldn't send your message.";

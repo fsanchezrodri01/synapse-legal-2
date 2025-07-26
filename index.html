@@ -493,7 +493,7 @@
                 <div class="details-content">
                   <div class="contact-form-items">
                     <form
-                      action="#"
+                      action="contact.php"
                       id="contact-form"
                       method="POST"
                       class="mt-4 mt-md-0"
@@ -506,6 +506,7 @@
                               name="name"
                               id="name"
                               placeholder="Nombre"
+                              required
                             />
                           </div>
                         </div>
@@ -513,8 +514,8 @@
                           <div class="form-clt">
                             <input
                               type="text"
-                              name="email"
-                              id="email32"
+                              name="apellido"
+                              id="apellido"
                               placeholder="Apellido"
                             />
                           </div>
@@ -524,7 +525,7 @@
                             <input
                               type="text"
                               name="email"
-                              id="email33"
+                              id="email"
                               placeholder="Correo Electrónico"
                             />
                           </div>
@@ -533,8 +534,8 @@
                           <div class="form-clt">
                             <input
                               type="text"
-                              name="subject"
-                              id="subject"
+                              name="phone"
+                              id="phone"
                               placeholder="Número de Teléfono"
                             />
                           </div>
@@ -542,16 +543,26 @@
                         <div class="col-lg-12">
                           <div class="form-clt">
                             <textarea
-                              name="message"
-                              id="message"
+                              name="comments"
+                              id="comments"
                               placeholder="Dudas o Comentarios"
+                              required
                             ></textarea>
+                          </div>
+                        </div>
+                        <div class="col-lg-12">
+                          <div class="form-clt">
+                            <input
+                              type="hidden"
+                              name="g-recaptcha-response"
+                              id="g-recaptcha-response"
+                            />
                           </div>
                         </div>
                         <div class="col-lg-12">
                           <div class="contact-btn text-start">
                             <button type="submit" class="theme-btn">
-                              Solicitar Consulta
+                              Enviar mi Consulta
                               <i class="fa-solid fa-arrow-right"></i>
                             </button>
                           </div>
