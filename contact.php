@@ -31,7 +31,7 @@ error_reporting(E_ALL);
             $mail->Host = 'mail.synapse-legal.com.mx';
             $mail->SMTPAuth = true;
             $mail->Username = 'contacto@synapse-legal.com.mx';
-            $mail->Password = 'dhxZ2ZSl#EIq#aj6';
+            $mail->Password = 'falsepass';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port = 465;
 
