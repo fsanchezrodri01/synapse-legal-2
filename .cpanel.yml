@@ -1,0 +1,4 @@
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/ultrabiz/synapse-legal.com.mx
+    - /bin/cp -R * $DEPLOYPATH
