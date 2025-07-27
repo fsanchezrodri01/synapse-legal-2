@@ -1,8 +1,12 @@
 <?php
+
+
+// require 'vendor/autoload.php';
+require __DIR__ . '/vendor/autoload.php';
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-require 'vendor/autoload.php';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
@@ -32,6 +36,8 @@ error_reporting(E_ALL);
             $mail->SMTPAuth = true;
             $mail->Username = 'contacto@synapse-legal.com.mx';
             $mail->Password = 'falsepass';
+            $mail->SMTPDebug = 2;
+            $mail->Debugoutput = 'html';
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
             $mail->Port = 465;
 
